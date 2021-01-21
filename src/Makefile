@@ -37,7 +37,7 @@ SOURCES := \
 	cortex_m.o
 
 # js: CFLAGS += -I ${EMSCRIPTEN}/system/include/libc -DLIBRARY
-js: JSOUT ?= zenroom.js
+js: JSOUT ?= zenroom.wasm
 js: ${SOURCES}
 	${CC} ${CFLAGS} ${SOURCES} -o ${JSOUT} ${LDFLAGS} ${LDADD} ${JSEXT}
 

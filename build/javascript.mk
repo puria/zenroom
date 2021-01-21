@@ -62,7 +62,7 @@ javascript-npm: ldflags += -s ENVIRONMENT=\"'web,node'\" \
 javascript-npm: apply-patches milagro lua53 embed-lua
 	CC=${gcc} CFLAGS="${cflags}" LDFLAGS="${ldflags}" LDADD="${ldadd}" \
 	JSEXT="--embed-file lua@/" \
-	make -C src wasm
+	make -C src js
 	@mkdir -p build/npm
 	@cp -v src/zenroom.wasm    build/npm/
 
