@@ -1,4 +1,4 @@
-name: Test javascript bindings
+name: NPM RELEASE
 on:
   workflow_dispatch:
     inputs:
