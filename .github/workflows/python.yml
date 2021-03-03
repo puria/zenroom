@@ -23,7 +23,7 @@ jobs:
           python-version: '3.7'
       - run: sudo apt-get update && sudo apt-get install -y cmake vim zsh
       - run: pip install -e .[test]
-      - run: pytets -s tests
+      - run: pytest -s tests
 
   build_wheels:
     needs: [python-test]
