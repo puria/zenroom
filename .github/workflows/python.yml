@@ -8,7 +8,24 @@ on:
     - '*.md'
 
 jobs:
+  python-test:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bindings/python3
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        name: Install Python
+        with:
+          python-version: '3.7'
+      - run: pip install -e .[test]
+      - run: pytets -s tests
+
   build_wheels:
+    needs: [python-test]
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
