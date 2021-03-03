@@ -21,7 +21,7 @@ jobs:
         name: Install Python
         with:
           python-version: '3.7'
-      - run: apt-get update && apt-get install -y cmake vim zsh
+      - run: sudo apt-get update && sudo apt-get install -y cmake vim zsh
       - run: pip install -e .[test]
       - run: pytets -s tests
 
